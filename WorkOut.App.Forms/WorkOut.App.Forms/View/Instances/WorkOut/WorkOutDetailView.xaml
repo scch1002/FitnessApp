@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkOut.App.Forms.View.WorkOutDetailView"
+             Title="WorkOuts">
+  <StackLayout>
+    <Label Text="Warm Up" />
+    <ListView ItemsSource="{Binding WorkOutWarmUpSets}" ItemTapped="OnItemTapped">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell Text="{Binding SetName}" Detail="{ Binding Weight }" />
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Label Text="WorkOut" />
+    <ListView ItemsSource="{Binding WorkOutSets}" ItemTapped="OnItemTapped">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell Text="{Binding SetName}" Detail="{ Binding Weight }" />
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Button x:Name="WorkCompleteButton" Text="WorkOut Complete" Clicked="OnWorkOutCompleteClicked" />
+  </StackLayout>
+</ContentPage>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkOut.App.Forms.View.Definition.WorkOut.WorkOutDefinitionOverView">
+  <StackLayout>
+    <Button Text="Add WorkOut Definition" Clicked="OnAddWorkOutDefinitionClicked" />
+    <ListView ItemsSource="{Binding WorkOutDefinitions}" ItemTapped="OnItemTapped">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell Text="{Binding WorkOutName}" />
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

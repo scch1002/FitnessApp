@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkOut.App.Forms.View.AddSessionDefinitionView">
+  <StackLayout>
+    <Label Text="Session Name" />
+    <Entry Text="{Binding SessionName}"></Entry>
+    <Button Text="Add" Clicked="OnAddClicked" />
+  </StackLayout>
+</ContentPage>

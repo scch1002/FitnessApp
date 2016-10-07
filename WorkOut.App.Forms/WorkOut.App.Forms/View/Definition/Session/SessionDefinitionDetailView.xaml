@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkOut.App.Forms.View.SessionDefinitionDetailView">
+  <StackLayout>
+    <Button Text="Add WarmUp WorkOut" Clicked="OnAddWarmUpWorkOutDefinitionClicked" />
+    <Button Text="Add WorkOut" Clicked="OnAddWorkOutDefinitionClicked"></Button>
+    <Label Text="Warm Up WorkOuts" />
+    <ListView ItemsSource="{Binding SessionWarmUpWorkOuts}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.ContextActions>
+              <MenuItem Clicked="OnDeleteWarmUpAssignment" CommandParameter="{Binding }"
+                 Text="Delete" IsDestructive="True" />
+            </ViewCell.ContextActions>
+            <StackLayout Padding="15,0">
+              <Label Text="{Binding WorkOutName}"  />
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Label Text="WorkOuts" />
+    <ListView ItemsSource="{Binding SessionWorkOuts}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.ContextActions>
+              <MenuItem Clicked="OnDeleteAssignment" CommandParameter="{Binding }"
+                 Text="Delete" IsDestructive="True" />
+            </ViewCell.ContextActions>
+            <StackLayout Padding="15,0">
+              <Label Text="{Binding WorkOutName}"  />
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

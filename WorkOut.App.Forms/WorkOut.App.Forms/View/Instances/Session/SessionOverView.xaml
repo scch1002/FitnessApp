@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkOut.App.Forms.SessionOverView">
+  <StackLayout>
+    <Button Text="Edit Schedule" Clicked="OnEditScheduleClicked" />
+    <Button x:Name="NextSessionButton" Text="Next Session" Clicked="OnNextSessionClicked" />
+    <ListView x:Name="SessionList" ItemsSource="{Binding Sessions}" ItemTapped="OnItemTapped">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.ContextActions>
+              <MenuItem Clicked="OnDeleteSessionClicked"
+                 Text="Delete" IsDestructive="True" />
+            </ViewCell.ContextActions>
+            <StackLayout Padding="15,0">
+              <Label Text="{Binding SessionName}" />
+              <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding SessionDate}" />
+              </StackLayout>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>
