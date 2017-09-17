@@ -6,12 +6,16 @@
   <ContentPage.Resources>
     <ResourceDictionary>
       <Style TargetType="Button">
+        <Setter Property="Margin" Value="5" />
         <Setter Property="BorderColor" Value="Black" />
         <Setter Property="BorderWidth" Value="1" />
         <Setter Property="BackgroundColor" Value="White" />
         <Setter Property="TextColor" Value="Black" />
       </Style>
       <Style TargetType="Label">
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style TargetType="Entry">
         <Setter Property="TextColor" Value="Black" />
       </Style>
     </ResourceDictionary>
