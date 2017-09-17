@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkOut.App.Forms.View.WorkOutDefinitionView"
+             BackgroundColor="White">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Button">
+        <Setter Property="BorderColor" Value="Black" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style TargetType="Label">
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style TargetType="Entry">
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ScrollView>
+    <StackLayout>
+      <Label Text="WorkOut Name" />
+      <Entry Text="{Binding WorkOutName}"></Entry>
+      <Label Text="Number Of WarmUp Sets" />
+      <Entry Text="{Binding NumberOfWarmUpSets}" Keyboard="Numeric"></Entry>
+      <Label Text="WarmUp Repetitions" />
+      <Entry Text="{Binding WarmUpRepetitions}" Keyboard="Numeric"></Entry>
+      <Label Text="WarmUp Weight" />
+      <Entry Text="{Binding WarmUpWeight}" Keyboard="Numeric"></Entry>
+      <Label Text="Number Of Sets" />
+      <Entry Text="{Binding NumberOfSets}" Keyboard="Numeric"></Entry>
+      <Label Text="Repetitions" />
+      <Entry Text="{Binding Repetitions}" Keyboard="Numeric"></Entry>
+      <Label Text="Weight" />
+      <Entry Text="{Binding Weight}" Keyboard="Numeric"></Entry>
+      <Button Text="Update" Command="{Binding UpdateWorkoutDefinition}" />
+    </StackLayout>
+  </ScrollView>
+</ContentPage>
