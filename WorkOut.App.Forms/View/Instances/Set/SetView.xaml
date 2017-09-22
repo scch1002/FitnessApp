@@ -31,6 +31,7 @@
       <Label Text="Completed Repetitions" />
       <Picker x:Name="RepPicker" Title="Completed Reps"
               HorizontalOptions="FillAndExpand"
+              TextColor="Black"
               SelectedIndex="{Binding CompletedRepetitions}" />
       <Button Text="Save" Command="{Binding SaveSet}"></Button>
     </StackLayout>

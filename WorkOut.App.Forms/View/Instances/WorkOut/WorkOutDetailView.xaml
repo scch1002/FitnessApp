@@ -22,7 +22,7 @@
     </ResourceDictionary>
   </ContentPage.Resources>
   <StackLayout>
-    <Label Text="Warm Up" />
+    <Label Text="Warm Up Sets" />
     <ListView ItemsSource="{Binding WarmupWorkOut}" ItemTapped="OnItemTapped">
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -30,7 +30,7 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Label Text="WorkOut" />
+    <Label Text="Main Sets" />
     <ListView ItemsSource="{Binding MainWorkOut}" ItemTapped="OnItemTapped">
       <ListView.ItemTemplate>
         <DataTemplate>

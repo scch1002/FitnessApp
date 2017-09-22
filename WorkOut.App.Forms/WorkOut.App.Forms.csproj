@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="AppContainer.cs" />
+    <Compile Include="Converter\BooleanToCompleteConverter.cs" />
     <Compile Include="DataModel\DatabaseHelper.cs" />
     <Compile Include="DataModel\ISQLite.cs" />
     <Compile Include="DataModel\SessionDefinitionRow.cs" />

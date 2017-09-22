@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorkOut.App.Forms.View.AddWorkOutDefinitionView"
+             Title="Add Workout Definition"
              BackgroundColor="White">
   <ContentPage.Resources>
     <ResourceDictionary>
@@ -23,13 +24,13 @@
   <ScrollView>
     <StackLayout>
       <StackLayout BindingContext="{Binding NewWorkoutDefinitionViewModel}">
-        <Label Text="WorkOut Name" />
+        <Label Text="Workout Name" />
         <Entry Text="{Binding WorkOutName}"></Entry>
-        <Label Text="Number Of WarmUp Sets" />
+        <Label Text="Number Of Warm Up Sets" />
         <Entry Text="{Binding NumberOfWarmUpSets}" Keyboard="Numeric"></Entry>
-        <Label Text="WarmUp Repetitions" />
+        <Label Text="Warm Up Repetitions" />
         <Entry Text="{Binding WarmUpRepetitions}" Keyboard="Numeric"></Entry>
-        <Label Text="WarmUp Weight" />
+        <Label Text="Warm Up Weight" />
         <Entry Text="{Binding WarmUpWeight}" Keyboard="Numeric"></Entry>
         <Label Text="Number Of Sets" />
         <Entry Text="{Binding NumberOfSets}" Keyboard="Numeric"></Entry>
