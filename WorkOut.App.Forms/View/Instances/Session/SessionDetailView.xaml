@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:WorkOut.App.Forms.Converter"
+             x:Class="WorkOut.App.Forms.View.SessionDetailView"
+             BackgroundColor="White"
+             Title="{Binding SessionName}"
+             >
+  <ContentPage.Resources>
+    <ResourceDictionary>
+        <local:BooleanToCompleteConverter x:Key="BooleanToCompleteConverter"></local:BooleanToCompleteConverter>
+      <Style TargetType="TextCell">
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style TargetType="Label">
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <StackLayout>
+    <Label Text="Warm Up Workouts" />
+    <ListView ItemsSource="{Binding WarmupSessionWorkOuts}" ItemTapped="OnItemTapped">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+            <TextCell TextColor="Black" DetailColor="Black" Text="{Binding WorkOutName}" Detail="{Binding WorkOutComplete, Converter={StaticResource BooleanToCompleteConverter}}" />
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Label Text="Workouts" />
+    <ListView ItemsSource="{Binding MainSessionWorkOuts}" ItemTapped="OnItemTapped">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+            <TextCell TextColor="Black" DetailColor="Black" Text="{Binding WorkOutName}" Detail="{Binding WorkOutComplete, Converter={StaticResource BooleanToCompleteConverter}}" />
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

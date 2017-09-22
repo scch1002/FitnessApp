@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkOut.App.Forms.View.SessionDefinitionView"
+             BackgroundColor="White"
+             Title="{Binding SessionName}"
+             >
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Button">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="BorderColor" Value="Black" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style TargetType="Label">
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <StackLayout>
+    <Button Text="Add WarmUp WorkOut" Clicked="OnAddWarmUpWorkOutDefinitionClicked" />
+    <Button Text="Add WorkOut" Clicked="OnAddWorkOutDefinitionClicked"></Button>
+    <Label Text="Warm Up WorkOuts" />
+    <ListView ItemsSource="{Binding WarmUpWorkOutDefinitions}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.ContextActions>
+              <MenuItem Clicked="OnDeleteWarmUpAssignment"
+                 Text="Delete" IsDestructive="True" />
+            </ViewCell.ContextActions>
+            <StackLayout Padding="15,0">
+              <Label Text="{Binding WorkOutDefinition.WorkOutName}"  />
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Label Text="WorkOuts" />
+    <ListView ItemsSource="{Binding MainWorkOutDefinitions}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.ContextActions>
+              <MenuItem Clicked="OnDeleteAssignment"
+                 Text="Delete" IsDestructive="True" />
+            </ViewCell.ContextActions>
+            <StackLayout Padding="15,0">
+              <Label Text="{Binding WorkOutDefinition.WorkOutName}"  />
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

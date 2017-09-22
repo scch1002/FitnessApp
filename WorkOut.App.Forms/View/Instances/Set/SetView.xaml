@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkOut.App.Forms.View.SetView"
+             BackgroundColor="White"
+             Title="{Binding SetName}"
+             >
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Button">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="BorderColor" Value="Black" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style TargetType="Label">
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style TargetType="Entry">
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ScrollView>
+    <StackLayout>
+      <Label Text="Set Weight:" />
+      <Entry Text="{Binding Weight}" Keyboard="Numeric" />
+      <Label Text="Total Reps:" />
+      <Label Text="{Binding TotalRepetitions}" />
+      <Label Text="Completed Repetitions" />
+      <Picker x:Name="RepPicker" Title="Completed Reps"
+              HorizontalOptions="FillAndExpand"
+              TextColor="Black"
+              SelectedIndex="{Binding CompletedRepetitions}" />
+      <Button Text="Save" Command="{Binding SaveSet}"></Button>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>
