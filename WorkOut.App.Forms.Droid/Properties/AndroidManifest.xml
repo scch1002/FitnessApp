@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionCode="1" android:versionName="1.0" package="workout.app.android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionCode="2" android:versionName="1.1" package="workout.app.android">
 	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="Fitness Prototype" android:icon="@drawable/ic_launcher"></application>
+	<application android:label="CS Workout Prototype" android:icon="@drawable/ic_launcher"></application>
 </manifest>
