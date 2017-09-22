@@ -20,11 +20,18 @@
   <StackLayout>
     <Button Text="Add WorkOut Definition" Command="{Binding AddWorkoutDefinition}" />
     <ListView ItemsSource="{Binding WorkOutDefinitions}" ItemTapped="OnItemTapped">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <TextCell TextColor="Black" Text="{Binding WorkOutName}" />
-        </DataTemplate>
-      </ListView.ItemTemplate>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Clicked="OnDeleteWorkoutDefinition" Text="Delete" IsDestructive="True" />
+                    </ViewCell.ContextActions>
+                    <StackLayout Padding="15,0">
+                        <Label TextColor="Black" Text="{Binding WorkOutName}"  />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
     </ListView>
   </StackLayout>
 </ContentPage>

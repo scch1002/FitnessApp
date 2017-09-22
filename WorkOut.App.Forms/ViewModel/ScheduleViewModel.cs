@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WorkOut.App.Forms.Messages;
 using WorkOut.App.Forms.Model;
 using WorkOut.App.Forms.Repository;
 using WorkOut.App.Forms.Repository.Interfaces;
@@ -94,6 +95,15 @@ namespace WorkOut.App.Forms.ViewModel
         private void ViewNewSessionDefinitionFormExecute()
         {
             _userInterfaceState.ChangeUserInterfaceState(UserInterfaceStates.ScheduleAdd);
+        }
+
+        private void RemoveAssignmentUponDelete(DeleteAssignmentMessage message)
+        {
+            foreach(var assignment in Sessions.Where(s => s.WorkOutDefinitions.Any(w => w.SessionDefinitionId == message.SessionDefinitionId 
+                && w.WorkOutDefinition.WorkOutId == message.WorkoutDefinitionId)))
+            {
+
+            }
         }
     }
 }

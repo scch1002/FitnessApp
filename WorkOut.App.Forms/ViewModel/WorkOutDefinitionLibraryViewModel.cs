@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WorkOut.App.Forms.Messages;
 using WorkOut.App.Forms.Model;
 using WorkOut.App.Forms.Repository;
 using WorkOut.App.Forms.Repository.Interfaces;
@@ -63,6 +64,11 @@ namespace WorkOut.App.Forms.ViewModel
             _workOutDefinitionRepository.DeleteWorkOutDefinition(SelectedWorkoutDefinition);
 
             WorkOutDefinitions.Remove(SelectedWorkoutDefinition);
+
+            MessengerInstance.Send(new DeleteAssignmentMessage
+            {
+                WorkoutDefinitionId = SelectedWorkoutDefinition.WorkOutId
+            });
 
             SelectedWorkoutDefinition = null;
         }

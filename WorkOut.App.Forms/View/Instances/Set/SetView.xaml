@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorkOut.App.Forms.View.SetView"
-             BackgroundColor="White">
+             BackgroundColor="White"
+             Title="{Binding SetName}"
+             >
   <ContentPage.Resources>
     <ResourceDictionary>
       <Style TargetType="Button">
@@ -22,7 +24,6 @@
   </ContentPage.Resources>
   <ScrollView>
     <StackLayout>
-      <Label Text="{Binding SetName}" />
       <Label Text="Set Weight:" />
       <Entry Text="{Binding Weight}" Keyboard="Numeric" />
       <Label Text="Total Reps:" />

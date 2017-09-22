@@ -51,6 +51,7 @@
     <Compile Include="DataModel\WorkOutRow.cs" />
     <Compile Include="IAppContainer.cs" />
     <Compile Include="IUserInterfaceState.cs" />
+    <Compile Include="Messages\DeleteAssignmentMessage.cs" />
     <Compile Include="Model\Interface\IWorkoutAssignment.cs" />
     <Compile Include="Model\ITimerAlert.cs" />
     <Compile Include="Model\WorkOutAssignment.cs" />

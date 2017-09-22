@@ -19,7 +19,7 @@
   </ContentPage.Resources>
   <StackLayout>
     <Button Text="Edit WorkOut Definitions" Command="{Binding ViewWorkOutDefinitionLibrary}" />
-    <Button Text="Add Session" Command="{Binding ViewNewSessionDefinitionForm}"/>
+    <Button Text="Add Session Definition" Command="{Binding ViewNewSessionDefinitionForm}"/>
     <ListView x:Name="SessionList" ItemsSource="{Binding Sessions}" ItemTapped="OnItemTapped">
       <ListView.ItemTemplate>
         <DataTemplate>

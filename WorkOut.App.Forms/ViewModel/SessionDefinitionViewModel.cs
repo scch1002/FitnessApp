@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WorkOut.App.Forms.Messages;
 using WorkOut.App.Forms.Model;
 using WorkOut.App.Forms.Model.Interface;
 using WorkOut.App.Forms.Repository.Interfaces;
@@ -26,6 +27,8 @@ namespace WorkOut.App.Forms.ViewModel
             WorkOutDefinitions = new ObservableCollection<IWorkoutAssignment>();
             WorkOutDefinitions.CollectionChanged += WorkOutDefinitions_CollectionChanged;
             RemoveSelectedWorkOutDefinition = new RelayCommand(RemoveSelectedWorkOutDefinitionExecute, CanRemoveSelectedWorkOutDefinitionExecute);
+
+            MessengerInstance.Register<DeleteAssignmentMessage>(this, RemoveAssignmentUponDelete);
         }
 
         public ICommand RemoveSelectedWorkOutDefinition { get; }
@@ -78,6 +81,14 @@ namespace WorkOut.App.Forms.ViewModel
         {
             RaisePropertyChanged("WarmUpWorkOutDefinitions");
             RaisePropertyChanged("MainWorkOutDefinitions");
+        }
+
+        private void RemoveAssignmentUponDelete(DeleteAssignmentMessage message)
+        {
+            foreach(var workoutAssingment in WorkOutDefinitions.Where(w => w.WorkOutDefinition.WorkOutId == message.WorkoutDefinitionId).ToList())
+            {
+                WorkOutDefinitions.Remove(workoutAssingment);
+            }
         }
     }
 }

@@ -40,7 +40,16 @@ namespace WorkOut.App.Forms.ViewModel
 
         public TimeSpan RestTimeBetweenSets { get; set; }
 
-        public string WorkOutName { get; set; }
+        private string _workoutName;
+        public string WorkOutName
+        {
+            get { return _workoutName; }
+            set
+            {
+                _workoutName = value;
+                RaisePropertyChanged();
+            }
+        }
 
         private bool _workOutComplete;
         public bool WorkOutComplete

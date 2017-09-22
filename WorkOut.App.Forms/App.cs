@@ -15,10 +15,6 @@ namespace WorkOut.App.Forms
     {
         public static IAppContainer Container { get; set; } = new AppContainer();
 
-        public App()
-        {
-        }
-
         protected override void OnStart()
         {
             DatabaseHelper.CreateWorkOutDatabase();

@@ -30,5 +30,14 @@ namespace WorkOut.App.Forms.View.WorkOut
 
             _workOutDefinitionOverViewViewModel.ViewWorkoutDefinition.Execute(null);
         }
+
+        public void OnDeleteWorkoutDefinition(object sender, EventArgs e)
+        {
+            var menuItem = ((MenuItem)sender);
+            DisplayAlert("Workout Definition Removed", "The workout definition has been removed.", "Ok");
+            _workOutDefinitionOverViewViewModel.SelectedWorkoutDefinition = (IWorkoutDefinitionViewModel)menuItem.BindingContext;
+
+            _workOutDefinitionOverViewViewModel.RemoveWorkoutDefinition.Execute(null);
+        }
     }
 }

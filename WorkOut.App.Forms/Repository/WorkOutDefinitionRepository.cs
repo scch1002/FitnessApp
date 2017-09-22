@@ -106,7 +106,7 @@ namespace WorkOut.App.Forms.Repository
 
                 foreach(var assignment in assignments)
                 {
-                    connection.Delete<WorkOutDefinitionRow>(workOutDefinition.WorkOutId);
+                    connection.Delete<WorkOutAssignmentRow>(assignment.AssignmentId);
                 }
 
                 connection.Delete<WorkOutDefinitionRow>(workOutDefinition.WorkOutId);
